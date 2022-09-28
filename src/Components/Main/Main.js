@@ -23,8 +23,8 @@ const Main = () => {
           )
     }
     return (
-        <div className='grid grid-cols-12'>
-            <div className="product-container col-span-9 grid grid-cols-3 gap-4 ml-8 mt-10">
+        <div className='grid grid-cols-1 md:grid-cols-12'>
+            <div className="product-container col-span-9 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-5 mt-10">
                 {
                     products.map(product => <Product product={product} key={product.idMeal} cart={cart} setCart={setCart}></Product>)
                 }

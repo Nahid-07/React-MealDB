@@ -4,19 +4,28 @@ const Product = ({product,cart,setCart}) => {
     // console.log(product);
     const {strCategory,strMealThumb,strMeal,strInstructions,idMeal}=product;
     function addToCart(){
-        const info = {
+        let info = {
             strCategory,
             strMealThumb,
             strMeal,
-            idMeal
+            idMeal,
+            quantity:1
         }
-        
+        console.log(info)
         
         if(cart){
             setCart([...cart,info])
         }
         else{
             setCart(info)
+        }
+
+        const preveStored = localStorage.getItem('storedCart')
+        const oldStored = JSON.parse(preveStored);
+        if(oldStored){
+            localStorage.setItem('storedCart',JSON.stringify([...oldStored,info]))
+        }else{
+            localStorage.setItem('storedCart',JSON.stringify([info]))
         }
     }
     // console.log(cart)

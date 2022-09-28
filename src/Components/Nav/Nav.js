@@ -2,7 +2,7 @@ import React from 'react';
 
 const Nav = () => {
     return (
-       <nav className='bg-purple-800 h-20 flex items-center'>
+       <nav className='bg-purple-800 h-20 lg:flex lg:items-center hidden lg:block'>
             <ul className='flex text-white'>
                 <li className='mx-9'>Home</li>
                 <li className='mx-9'>Order</li>
